@@ -1,4 +1,11 @@
-
+float  InvSqrt(float x)
+{
+	float xhalf = 0.5f * x;
+	int i = *(int*)&x;
+	i = 0x5f3759df - (i >> 1);
+	x=*(float*)&i;
+	return x * (1.5f - xhalf * x * x);
+}
 
 /* function represented belove was used as it is in Quack 3 Arena!!!
 float Q_rsqrt( float number )
